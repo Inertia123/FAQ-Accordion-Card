@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+$Very-dark-desaturated-blue: hsl(238, 29%, 16%);
+$Soft-red: hsl(14, 88%, 65%);
+$Soft-violet: hsl(273, 75%, 66%);
+$Soft-blue: hsl(240, 73%, 65%);
+$Very-dark-grayish-blue: hsl(237, 12%, 33%);
+$Dark-grayish-blue: hsl(240, 6%, 50%);
+$Light-grayish-blue: hsl(240, 5%, 91%);
+$Font-size: 12px;
+$Font-family: 'Kumbh Sans', sans-serif;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: $Font-size;
+    font-family: $Font-family;
+}
+body{
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient( 180deg, $Soft-violet , $Soft-blue);
+    .box{
+        display: none;
+    }
+    main{
+        background: #fff;
+        max-width: 85%;
+        margin: 0 auto;
+        border-radius: 2rem;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 6rem;
+        background-image: url(../images/bg-pattern-mobile.svg);
+        background-repeat: no-repeat;
+        background-position: center top;
+        padding: 1.4rem;
+        box-shadow: 0px 40px 112px -33px rgba(0,0,0,0.75);
+        .image-container{
+            position: relative;
+            display: grid;
+            justify-content: center;
+            .illustrator-mob{
+                transform: translateY(-10.5rem);
+                padding-right: 2.5rem;
+                max-width: 100%;
+            }
+            .illustrator-desk{
+                display: none;
+            }
+        }
+        .accordion-container{
+            margin-top: -6rem;
+            h1{
+                text-align: center;
+                font-size: 2.5rem;
+                margin-bottom: 1.5rem;
+            }
+            .question-ans-container{
+                padding: 1rem 1.5rem;
+                .question-answer-wrapper{
+                    margin-bottom: 1.5rem;
+                    border-bottom: 1px solid $Light-grayish-blue;
+                    .question{
+                        cursor: pointer;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        margin-bottom: 1.5rem;
+                        .question-title{
+                            color: $Very-dark-grayish-blue;
+                            font-weight: 400;
+                        }
+                        .arrow{
+                            img{
+                                transform: rotate(0deg);
+                                transition: all 0.1s ease-in;
+                            }
+                        }
+                    }
+                    .answer{
+                        display: none;
+                        padding-bottom: 1.5rem;
+                        font-size: 1.1rem;
+                    }
+                }
+                .active{
+                    .answer{
+                        display: block;
+                        color: $Dark-grayish-blue;
+                    }
+                    .question{
+                        .question-title{
+                            font-weight: 700;
+                        }
+                        .arrow{
+                            img{
+                                transform: rotate(180deg);
+                                transition: all 0.1s ease-in;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width: 768px){
+    body{
+        .box{
+            display: block;
+            position: absolute;
+            left: 14%;
+            top: 44%;
+            z-index: 1;
+        }
+        main{
+            display: grid;
+            grid-template-columns: 35rem 1fr;
+            margin: 0;
+            padding: 4rem;
+            background-image: url(../images/bg-pattern-desktop.svg);
+            background-position: 1280% 70%;
+            background-repeat: no-repeat;
+            width: 60%;
+            height: 70%;
+            overflow: hidden;
+            position: relative;
+            padding-top: 7rem;
+            .image-container{
+                .illustrator-desk{
+                    display: block;
+                    transform: translateX(-8rem);
+                }
+                .illustrator-mob{
+                    display: none;
+                }
+            }
+            .accordion-container{
+                margin: 0;
+                padding-right: 3.5rem;
+                h1{
+                    text-align: left;
+                    font-size: 3rem;
+                    margin-bottom: 3rem;
+                    font-weight: 700;
+                }
+                .question-ans-container{
+                    padding: 0;
+                    .question-answer-wrapper{
+                        margin-bottom: 1.7rem;
+                        border-bottom: 1px solid $Light-grayish-blue;
+                        .question{
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            .question-title{
+                                color: $Very-dark-grayish-blue;
+                                font-weight: 400;
+                                font-size: 1.2rem;
+                                &:hover{
+                                    color: $Soft-red;
+                                }
+                            }
+                        }
+                    }
+                    .active{
+                        .answer{
+                            display: block;
+                            color: $Dark-grayish-blue;
+                        }
+                        .question{
+                            .question-title{
+                                font-weight: 700;
+                            }
+                            .arrow{
+                                img{
+                                    transform: rotate(180deg);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

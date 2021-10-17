@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 12px;
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+body {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  width: 100vw;
+  background: -webkit-gradient(linear, left top, left bottom, from(#af67e9), to(#6565e7));
+  background: linear-gradient(180deg, #af67e9, #6565e7);
+}
+
+body .box {
+  display: none;
+}
+
+body main {
+  background: #fff;
+  max-width: 85%;
+  margin: 0 auto;
+  border-radius: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 6rem;
+  background-image: url(../images/bg-pattern-mobile.svg);
+  background-repeat: no-repeat;
+  background-position: center top;
+  padding: 1.4rem;
+  -webkit-box-shadow: 0px 40px 112px -33px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 40px 112px -33px rgba(0, 0, 0, 0.75);
+}
+
+body main .image-container {
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body main .image-container .illustrator-mob {
+  -webkit-transform: translateY(-10.5rem);
+          transform: translateY(-10.5rem);
+  padding-right: 2.5rem;
+  max-width: 100%;
+}
+
+body main .image-container .illustrator-desk {
+  display: none;
+}
+
+body main .accordion-container {
+  margin-top: -6rem;
+}
+
+body main .accordion-container h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+body main .accordion-container .question-ans-container {
+  padding: 1rem 1.5rem;
+}
+
+body main .accordion-container .question-ans-container .question-answer-wrapper {
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #e7e7e9;
+}
+
+body main .accordion-container .question-ans-container .question-answer-wrapper .question {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+body main .accordion-container .question-ans-container .question-answer-wrapper .question .question-title {
+  color: #4a4b5e;
+  font-weight: 400;
+}
+
+body main .accordion-container .question-ans-container .question-answer-wrapper .question .arrow img {
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+
+body main .accordion-container .question-ans-container .question-answer-wrapper .answer {
+  display: none;
+  padding-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+body main .accordion-container .question-ans-container .active .answer {
+  display: block;
+  color: #787887;
+}
+
+body main .accordion-container .question-ans-container .active .question .question-title {
+  font-weight: 700;
+}
+
+body main .accordion-container .question-ans-container .active .question .arrow img {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+
+@media only screen and (min-width: 768px) {
+  body .box {
+    display: block;
+    position: absolute;
+    left: 14%;
+    top: 44%;
+    z-index: 1;
+  }
+  body main {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 35rem 1fr;
+        grid-template-columns: 35rem 1fr;
+    margin: 0;
+    padding: 4rem;
+    background-image: url(../images/bg-pattern-desktop.svg);
+    background-position: 1280% 70%;
+    background-repeat: no-repeat;
+    width: 60%;
+    height: 70%;
+    overflow: hidden;
+    position: relative;
+    padding-top: 7rem;
+  }
+  body main .image-container .illustrator-desk {
+    display: block;
+    -webkit-transform: translateX(-8rem);
+            transform: translateX(-8rem);
+  }
+  body main .image-container .illustrator-mob {
+    display: none;
+  }
+  body main .accordion-container {
+    margin: 0;
+    padding-right: 3.5rem;
+  }
+  body main .accordion-container h1 {
+    text-align: left;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    font-weight: 700;
+  }
+  body main .accordion-container .question-ans-container {
+    padding: 0;
+  }
+  body main .accordion-container .question-ans-container .question-answer-wrapper {
+    margin-bottom: 1.7rem;
+    border-bottom: 1px solid #e7e7e9;
+  }
+  body main .accordion-container .question-ans-container .question-answer-wrapper .question {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  body main .accordion-container .question-ans-container .question-answer-wrapper .question .question-title {
+    color: #4a4b5e;
+    font-weight: 400;
+    font-size: 1.2rem;
+  }
+  body main .accordion-container .question-ans-container .question-answer-wrapper .question .question-title:hover {
+    color: #f47c57;
+  }
+  body main .accordion-container .question-ans-container .active .answer {
+    display: block;
+    color: #787887;
+  }
+  body main .accordion-container .question-ans-container .active .question .question-title {
+    font-weight: 700;
+  }
+  body main .accordion-container .question-ans-container .active .question .arrow img {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+}
+/*# sourceMappingURL=styles.css.map */
